@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
 
 class Product extends Component {
+
   render(){
+    const {product,handleDetail} = this.props
+    console.log(product);
+    
     return (
-      <div>Product</div>
+          <ul><li>{product}</li></ul>
   );
 }
 }
