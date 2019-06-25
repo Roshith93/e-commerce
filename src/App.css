@@ -8,8 +8,8 @@
 
 body{
   font-family: 'Oswald', 'sans-serif' !important; /*Since bootstrap is installed we have to give important to make this font visible*/
-  color: var(--mainWhite) !important;
-  background: var(--mainDark) !important;
+  color: var(--mainDark) !important;
+  background: var(--mainWhite) !important;
 }
 .text-title {
   font-family: 'Permanent Marker', cursive;

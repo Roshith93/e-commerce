@@ -13,7 +13,7 @@ class ProductList extends Component {
             <Title name="our" title="product" />
             <div className="row">
               <ProductConsumer>
-                {(value) => value.products.map(value => <Product key={value.id} product={value.title} handleDetail={value.handleDetail}/>)  }
+                {(value) => value.products.map(value => <Product key={value.id} product={value} handleDetail={value.handleDetail}/>)}
               </ProductConsumer>
             </div>
           </div>
