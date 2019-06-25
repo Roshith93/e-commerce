@@ -57,14 +57,16 @@ class ProductProvider extends Component {
         this.setState(() => {
             return {
                 modalProduct: tempProducts,
-                modal: false
+                modal: true
             }
         })
     }
     isModalClose = () => {
+        console.log("clicked")
         this.setState({
             modal: false
         })
+        console.log(this.state.modal)
     }
     render(){
         return (
