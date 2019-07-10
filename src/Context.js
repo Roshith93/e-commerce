@@ -12,9 +12,13 @@ class ProductProvider extends Component {
         detailProduct: detailProduct,
         cart: [],
         modal: false,
-        modalProduct: detailProduct
+        modalProduct: detailProduct,
+        cardSubTotal: 0,
+        cartTax: 0,
+        cartTotal: 0
     }
-    setProducts =() => {
+    // taking the data from api/external medium and storing it in the state.
+    setProducts = () => {
         let tempProducts = [];
         storeProducts.forEach(item => {
             let singleItem = {...item}
@@ -24,9 +28,7 @@ class ProductProvider extends Component {
             return {products:tempProducts}
         })
     }
-    componentDidMount(){
-        this.setProducts();
-    }
+   
     getItem = id => {
         return this.state.products.find(item => item.id === id)        
     }   
@@ -68,6 +70,14 @@ class ProductProvider extends Component {
         })
         console.log(this.state.modal)
     }
+    increment = id => console.log("inc");
+    decrement = id => console.log("Dec");
+    removeItem = id => console.log("removeItem");
+    clearCart = id => console.log("clear Cart");
+    
+     componentDidMount(){
+        this.setProducts();
+    }
     render(){
         return (
             <ProductContext.Provider value={{
@@ -75,7 +85,11 @@ class ProductProvider extends Component {
                 handleDetail:this.handleDetail,
                 addToCart:this.addToCart,
                 isModalOpen: this.isModalOpen,
-                isModalClose: this.isModalClose
+                isModalClose: this.isModalClose,
+                increment: this.increment,
+                decrement:this.decrement,
+                removeItem: this.removeItem,
+                clearCart: this.clearCart
             }}>
                 {this.props.children}
             </ProductContext.Provider>
