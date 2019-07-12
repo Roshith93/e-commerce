@@ -132,13 +132,13 @@ class ProductProvider extends Component {
         })
     };
     clearCart = () => {
-        this.setState(() => {
-            return{
+        this.setState(()=> {    
+            return {
                 cart: []
-            }, () => {
-                this.setProducts();
-                this.addTotals();
             }
+        },()=>{
+            this.setProducts();
+            this.addTotals();
         })
     };
     addTotals = () => {
